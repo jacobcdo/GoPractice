@@ -19,7 +19,7 @@ Once installed, make sure to have MySQL downloaded.
 $ brew install MySQL
 
 $ brew services start MySQL
-$ Mysqladmin -u root password "Create password"
+$ Mysqladmin -u root password "[MY_PASSWORD]"
 
 $ MySQL -u root -p
 Enter password: # 
@@ -28,7 +28,7 @@ mysql> CREATE DATABASE snippetbox CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_
        USE snippetbox;
        CREATE USER 'web'@'localhost';
        GRANT SELECT, INSERT, UPDATE, DELETE ON snippetbox.* TO 'web'@'localhost';
-       ALTER USER 'web'@'localhost' IDENTIFIED BY 'Previous password';
+       ALTER USER 'web'@'localhost' IDENTIFIED BY '[MY_PASSWORD]';
 ```
 
 Now create a self-signed TLS certificate.
